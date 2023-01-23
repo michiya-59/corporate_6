@@ -1,3 +1,8 @@
+@charset "UTF-8";
+body {
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+}
+
 #header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,4 +172,88 @@
 
 .open .back_logo {
   display: block !important;
+}
+
+.main_visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 150px;
+  height: 720px;
+}
+.main_visual .main_visual_left {
+  position: absolute;
+  margin-top: 288px;
+  z-index: 3;
+}
+.main_visual .main_visual_left h1 {
+  font-size: 2.875rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-shadow: 2px 4px 5px white;
+}
+.main_visual .main_visual_left a {
+  text-align: center;
+  text-decoration: none;
+  background: #FF0033;
+  color: white;
+  display: block;
+  width: 435px;
+  padding: 22.3px 35px;
+  border-radius: 7px;
+  font-size: 1.5rem;
+  -webkit-box-shadow: 0 7px 1px #9a0413;
+          box-shadow: 0 7px 1px #9a0413;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.main_visual .main_visual_left a::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-top: solid 3px #fff;
+  border-right: solid 3px #fff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 29px;
+  right: 30px;
+}
+.main_visual .main_visual_left a:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0.9;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.main_visual .main_visual_right {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  z-index: 2;
+  margin-left: auto;
+  width: 75%;
+  height: inherit;
+}
+.main_visual .main_visual_right img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main_visual .main_visual_right::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-shadow: inset 0px 0px 15px 15px #fff;
+          box-shadow: inset 0px 0px 15px 15px #fff;
 }/*# sourceMappingURL=style.css.map */
