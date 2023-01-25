@@ -4,6 +4,7 @@ body{
   font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
 
+// ヘッダー
 #header{
   display: flex;
   height: 100px;
@@ -75,6 +76,7 @@ body{
     right: 0;
     background: $mainColor;
     opacity: 0;
+    z-index: 4;
     pointer-events: none;
     transition: .5s;
     .mask_nav_menu{
@@ -151,6 +153,7 @@ body{
   display: block !important;
 }
 
+// メインビジュアル
 .main_visual{
   display: flex;
   padding-left: 150px;
@@ -206,6 +209,7 @@ body{
     margin-left: auto;
     width: 75%;
     height: inherit;
+    top: 0px;
     img{
       width: 100%;
       height: auto;
@@ -226,8 +230,10 @@ body{
   }
 }
 
+// BBBが選ばれる理由
 .reason{
   position: relative;
+  margin-bottom: 120px;
   &::after{
     content: "";
     position: absolute;
@@ -310,5 +316,95 @@ body{
       opacity: 1;
       transform: translate(0);
     }
+  }
+}
+
+// 受験生の声
+.student_voice{
+  width: 860px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  h1{
+    font-weight: bold;
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 101px;
+      height: 3px;
+      background: black;
+      top: 60px;
+      left: 44%;
+    }
+  }
+  .student_voice_part1, .student_voice_part2, .student_voice_part3{
+    display: flex;
+    opacity: 0;
+    .student_info{
+      width: 120px;
+      margin-right: 26px;
+      margin-bottom: 80px;
+      img{
+        background: lightgray;
+        width: 100%;
+        border-radius: 50%;
+      }
+      p{
+        font-size: 0.75rem;
+        text-align: center;
+      }
+    }
+    .student_voice_content{
+      width: 514px;
+      height: 142px;
+      background: #E9F1FB;
+      border-radius: 30px;
+      padding: 20px;
+      line-height: 35px;
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 0;
+        margin-left: -30px;
+        border: 9px solid transparent;
+        border-right: 24px solid #e9f1fb;
+      }
+    }
+  }
+  .student_content_fedin{
+    animation: balloon 0.7s ease-out 0s 1 forwards;
+  }
+  .student_voice_part2{
+    flex-direction: row-reverse;
+    .student_info{
+      margin-right: 0;
+      margin-left: 26px;
+    }
+    .student_voice_content::before{
+      content: "";
+      position: absolute;
+      top: 60%;
+      right: 0;
+      left: auto;
+      margin-right: -30px;
+      border: 9px solid transparent;
+      border-left: 24px solid #e9f1fb;
+    }
+  }
+}
+
+@keyframes balloon {
+  0%{
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
   }
 }

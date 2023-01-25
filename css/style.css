@@ -82,6 +82,7 @@ body {
   right: 0;
   background: #ff2a2a;
   opacity: 0;
+  z-index: 4;
   pointer-events: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -237,6 +238,7 @@ body {
   margin-left: auto;
   width: 75%;
   height: inherit;
+  top: 0px;
 }
 .main_visual .main_visual_right img {
   width: 100%;
@@ -261,6 +263,7 @@ body {
 
 .reason {
   position: relative;
+  margin-bottom: 120px;
 }
 .reason::after {
   content: "";
@@ -368,4 +371,114 @@ body {
   opacity: 1;
   -webkit-transform: translate(0);
           transform: translate(0);
+}
+
+.student_voice {
+  width: 860px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.student_voice h1 {
+  font-weight: bold;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+.student_voice h1::after {
+  content: "";
+  position: absolute;
+  width: 101px;
+  height: 3px;
+  background: black;
+  top: 60px;
+  left: 44%;
+}
+.student_voice .student_voice_part1, .student_voice .student_voice_part2, .student_voice .student_voice_part3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+}
+.student_voice .student_voice_part1 .student_info, .student_voice .student_voice_part2 .student_info, .student_voice .student_voice_part3 .student_info {
+  width: 120px;
+  margin-right: 26px;
+  margin-bottom: 80px;
+}
+.student_voice .student_voice_part1 .student_info img, .student_voice .student_voice_part2 .student_info img, .student_voice .student_voice_part3 .student_info img {
+  background: lightgray;
+  width: 100%;
+  border-radius: 50%;
+}
+.student_voice .student_voice_part1 .student_info p, .student_voice .student_voice_part2 .student_info p, .student_voice .student_voice_part3 .student_info p {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.student_voice .student_voice_part1 .student_voice_content, .student_voice .student_voice_part2 .student_voice_content, .student_voice .student_voice_part3 .student_voice_content {
+  width: 514px;
+  height: 142px;
+  background: #E9F1FB;
+  border-radius: 30px;
+  padding: 20px;
+  line-height: 35px;
+  position: relative;
+}
+.student_voice .student_voice_part1 .student_voice_content::before, .student_voice .student_voice_part2 .student_voice_content::before, .student_voice .student_voice_part3 .student_voice_content::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  margin-left: -30px;
+  border: 9px solid transparent;
+  border-right: 24px solid #e9f1fb;
+}
+.student_voice .student_content_fedin {
+  -webkit-animation: balloon 0.7s ease-out 0s 1 forwards;
+          animation: balloon 0.7s ease-out 0s 1 forwards;
+}
+.student_voice .student_voice_part2 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.student_voice .student_voice_part2 .student_info {
+  margin-right: 0;
+  margin-left: 26px;
+}
+.student_voice .student_voice_part2 .student_voice_content::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 0;
+  left: auto;
+  margin-right: -30px;
+  border: 9px solid transparent;
+  border-left: 24px solid #e9f1fb;
+}
+
+@-webkit-keyframes balloon {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
