@@ -1,6 +1,9 @@
+$mainColor: #ff2a2a;
+
 body{
   font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
+
 #header{
   display: flex;
   height: 100px;
@@ -27,7 +30,7 @@ body{
     #hunburger_menu{
       width: 100px;
       height: 100px;
-      background: #FF2A2A;
+      background: $mainColor;
       position: fixed;
       right: 0;
       top: 0;
@@ -70,7 +73,7 @@ body{
     left: 0;
     bottom: 0;
     right: 0;
-    background: #FF2A2A;
+    background: $mainColor;
     opacity: 0;
     pointer-events: none;
     transition: .5s;
@@ -96,7 +99,7 @@ body{
         transition: .5s;
         &:hover{
           background-color: white;
-          color: #FF2A2A;
+          color: $mainColor;
           transition: .5s;
         }
         &::before{
@@ -152,6 +155,7 @@ body{
   display: flex;
   padding-left: 150px;
   height: 720px;
+  margin-bottom: 90px;
   .main_visual_left{
     position: absolute;
     margin-top: 288px;
@@ -213,8 +217,98 @@ body{
     &::after {
       content: " ";
       position: absolute;
-      left: 0; top: 0; right: 0; bottom: 0;
+      left: 0; 
+      top: 0; 
+      right: 0; 
+      bottom: 69px;
       box-shadow: inset 0px 0px 15px 15px #fff;
+    }
+  }
+}
+
+.reason{
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    width: 89px;
+    height: 2px;
+    background: black;
+    top: 51px;
+    left: 47%;
+  }
+  h1{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .reason_content{
+    background: $mainColor;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    .reason_content_left{
+      background: white;
+      width: 50%;
+      height: 200px;
+      border-radius: 0 24px 24px 0;
+      padding: 70px 100px;
+      display: flex;
+      justify-content: center;
+      height: 213px;
+      opacity: 0;
+      transform: translateX(-400px);
+      transition: opacity 1s, transform 1s;
+      .content_left_left{
+        width: 87px;
+        height: 60px;
+        margin-right: 30px;
+        img{
+          width: 100%;
+        }
+      }
+      .content_left_right{
+        padding-top: 5px;
+        h1{
+          color: $mainColor;
+          margin: 0;
+        }
+      }
+    }
+    .reason_content_right{
+      background: white;
+      width: 50%;
+      margin-left: auto;
+      display: flex;
+      padding: 71px 146px 70px 158px;
+      justify-content: center;
+      height: 213px;
+      border-radius: 24px 0 0 24px;
+      opacity: 0;
+      transform: translateX(400px);
+      transition: opacity 1s, transform 1s;
+      .content_right_left{
+        width: 51px;
+        margin-right: 30px;
+        height: 60px;
+        img{
+          width: 100%;
+        }
+      }
+      .content_right_right{
+        padding-top: 5px;
+        h1{
+          color: $mainColor;
+          margin: 0;
+        }
+      }
+    }
+    .fadein-after{
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }
