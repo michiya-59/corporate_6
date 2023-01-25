@@ -408,3 +408,213 @@ body{
     opacity: 1;
   }
 }
+
+// スクールの概要
+.school_summary{
+  height: 896px;
+  background: url('../image/bg.gif') repeat;
+  animation: fall 10s infinite linear;
+  padding: 60px 0;
+  margin-bottom: 120px;
+  .wrapper{
+    width: 860px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    .school_title{
+      font-weight: bold;
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 100px;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 101px;
+        height: 3px;
+        background: black;
+        top: 60px;
+        left: 44%;
+      }
+    }
+    .school_content{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .school_content_part{
+        background: white;
+        width: 400px;
+        height: 299px;
+        border-radius: 15px;
+        margin-bottom: 32px;
+        padding: 25px;
+        text-align: center;
+        .school_introduction_title{
+          margin-bottom: 15px;
+          font-size: 1.75rem;
+          font-weight: bold;
+        }
+        .school_introduction_subtitle{
+          font-size: 1.125rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        .school_introduction_leson{
+          width: 72%;
+          margin: 0 auto;
+          p{
+            padding: 4px;
+            color: black;
+            position: relative;
+            margin-bottom: 11px;
+            cursor: pointer;
+            font-size: 0.85rem;
+
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+            transition: .3s;
+            &::after{
+              content: "";
+              width: 8px;
+              height: 8px;
+              border-top: solid 2px #fff;
+              border-right: solid 2px #fff;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 8px;
+              right: 13px;
+            }
+            
+            &:hover{
+              opacity: 0.8;
+              box-shadow: -4px -4px 0 #000;
+              transition: .3s;
+            }
+          }
+        }
+        .school_introduction_price, .school_introduction_teacher{
+          display: flex;
+          flex-direction: column;
+          font-size: 0.875rem;
+          strong{
+            margin-bottom: 9px;
+          }
+          p{
+            margin-bottom: 13px;
+            border-bottom: 2px dotted black;
+            padding-bottom: 5px;
+            letter-spacing: 3px;
+            text-align: left;
+            span{
+              width: 63%;
+              display: inline-block;
+            }
+          }
+        }
+        .school_introduction_qa{
+          display: flex;
+          flex-direction: column;
+          .qa_title{
+            font-size: 1.225rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px dotted black;
+            padding-bottom: 5px;
+            padding: 0 0 5px 6px;
+            position: relative;
+            &::before{
+              content: "Q";
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              line-height: 23px;
+              font-size: 15px;
+              left: 0;
+              top: -4px;
+              color: #807d7a;
+              border-radius: 50%;
+              border-style: solid;
+              border-width: 2px;
+              border-color: #807d7a;
+              display: inline-block;
+            }
+          }
+          .qa_text{
+            text-align: left;
+            font-size: 16px;
+            line-height: 29px;
+            position: relative;
+            padding-left: 36px;
+            &::before{
+              content: "A";
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              line-height: 25px;
+              font-size: 15px;
+              top: 0px;
+              text-align: center;
+              left: 1px;
+              color: white;
+              border-radius: 50%;
+              background: #ff2a2a;
+              border-style: solid;
+              border-width: 2px;
+              border-color: #ff2a2a;
+              display: inline-block;
+            }
+          }
+          a{
+            color: #2f2fbb;
+            width: inherit;
+            display: inherit;
+            margin: 17px 12px 0 auto;
+          }
+        }
+      }
+      .school_content_part:nth-child(1){
+        padding: 20px 25px 25px 25px;
+        opacity: 0;
+        transform: translateX(-400px);
+        transition: opacity 1s, transform 1s;
+        .school_introduction_title{
+          margin-bottom: 10px;
+        }
+        .school_introduction_subtitle{
+          margin-bottom: 10px;
+        }
+      }
+      .school_content_part:nth-child(2){
+        opacity: 0;
+        transform: translateX(400px);
+        transition: opacity 1s, transform 1s;
+      }
+      .school_content_part:nth-child(3){
+        opacity: 0;
+        transform: translateX(-400px);
+        transition: opacity 1s, transform 1s;
+      }
+      .school_content_part:nth-child(4){
+        opacity: 0;
+        transform: translateX(400px);
+        transition: opacity 1s, transform 1s;
+      }
+      .fadein-after2:nth-child(n){
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+  }
+}
+
+@keyframes fall {
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: -700px 700px;
+  }
+}
