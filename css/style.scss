@@ -1,5 +1,11 @@
 $mainColor: #ff2a2a;
 
+@mixin media{
+  @media screen and (max-width: 900px) {
+    @content
+  }
+}
+
 body{
   font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
@@ -8,10 +14,17 @@ body{
 #header{
   display: flex;
   height: 100px;
+  @include media{
+    padding: 25px 0 0 23px;
+  }
   .header_left{
     height: 73px;
     width: 100%;
     padding: 40px 0 0 50px;
+    @include media{
+      padding: 0;
+      height: 56px;
+    }
     .open_logo, .back_logo{
       height: 100%;
       display: block;
@@ -38,6 +51,12 @@ body{
       padding: 36px 24px;
       transition: .5s;
       z-index: 99;
+      @include media{
+        left: auto;
+        width: 75px;
+        height: 75px;
+        padding: 19px;
+      }
       cursor: pointer;
       &:hover{
         opacity: 0.8;
@@ -49,6 +68,10 @@ body{
         height: 2px;
         background: white;
         transition: .5s;
+        @include media{
+          width: 50%;
+          top: 26px;
+        }
       }
       span:nth-child(2){
         position: absolute;
@@ -57,6 +80,10 @@ body{
         background: white;
         top: 50px;
         transition: .5s;
+        @include media{
+          width: 50%;
+          top: 39px;
+        }
       }
       span:nth-child(3){
         position: absolute;
@@ -65,6 +92,10 @@ body{
         background: white;
         top: 65px;
         transition: .5s;
+        @include media{
+          width: 50%;
+          top: 52px;
+        }
       }
     }
   }
@@ -85,6 +116,9 @@ body{
       color: white;
       width: 250px;
       margin: 80px auto 0 auto;
+      @include media{
+        margin-top: 109px;
+      }
       a{
         display: inline-block;
         text-align: center;
@@ -138,6 +172,9 @@ body{
 .open span:nth-child(3){
   transform: translateY(-13px) rotate(135deg) !important;
   transition: .5s !important;
+  @include media{
+    transform: translateY(-11px) rotate(135deg) !important;
+  }
 }
 
 .open .mask_menu{
@@ -159,15 +196,31 @@ body{
   padding-left: 150px;
   height: 720px;
   margin-bottom: 90px;
+  @include media{
+    padding: 0;
+    display: block;
+    margin: 0;
+    height: 473px;
+  }
   .main_visual_left{
     position: absolute;
     margin-top: 288px;
     z-index: 3;
+    @include media{
+      width: 100%;
+      padding: 0 16px;
+      margin: 3rem 0px 15px 0px;
+      top: 339px;
+    }
     h1{
       font-size: 2.875rem;
       margin-bottom: 30px;
       font-weight: bold;
       text-shadow: 2px 4px 5px white;
+      @include media{
+        font-size: 1.75rem;
+        margin-bottom: 10px;
+      }
     }
     a{
       text-align: center;
@@ -182,6 +235,11 @@ body{
       box-shadow: 0 7px 1px #9a0413;
       position: relative;
       transition: .5s;
+      @include media{
+        width: 100%;
+        padding: 15px 62px;
+        font-size: 1rem;
+      }
       &::after{
         content: "";
         width: 16px;
@@ -192,6 +250,9 @@ body{
         position: absolute;
         top: 29px;
         right: 30px;
+        @include media{
+          top: 22px;
+        }
       }
       &:hover{
         transform: scale(1.05);
@@ -210,6 +271,10 @@ body{
     width: 75%;
     height: inherit;
     top: 0px;
+    @include media{
+      width: 100%;
+      height: 276px;
+    }
     img{
       width: 100%;
       height: auto;
@@ -226,6 +291,10 @@ body{
       right: 0; 
       bottom: 69px;
       box-shadow: inset 0px 0px 15px 15px #fff;
+      @include media{
+        bottom: auto;
+        height: inherit;
+      }
     }
   }
 }
@@ -234,6 +303,9 @@ body{
 .reason{
   position: relative;
   margin-bottom: 120px;
+  @include media{
+    margin-bottom: 80px;
+  }
   &::after{
     content: "";
     position: absolute;
@@ -242,12 +314,20 @@ body{
     background: black;
     top: 51px;
     left: 47%;
+    @include media{
+      width: 79px;
+      left: 40%;
+    }
   }
   h1{
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 100px;
+    @include media{
+      font-size: 1.75rem;
+      margin-bottom: 60px;
+    }
   }
   .reason_content{
     background: $mainColor;
@@ -257,6 +337,10 @@ body{
     justify-content: space-between;
     overflow-x: hidden;
     height: 600px;
+    @include media{
+      padding: 40px 0;
+      height: 325px;
+    }
     .reason_content_left{
       background: white;
       width: 50%;
@@ -269,6 +353,11 @@ body{
       opacity: 0;
       transform: translateX(-400px);
       transition: opacity 1s, transform 1s;
+      @include media{
+        width: 90%;
+        height: 101px;
+        padding: 19px 21px;
+      }
       .content_left_left{
         width: 87px;
         height: 60px;
@@ -279,9 +368,16 @@ body{
       }
       .content_left_right{
         padding-top: 5px;
+        @include media{
+          height: 60px;
+        }
         h1{
           color: $mainColor;
           margin: 0;
+          @include media{
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+          }
         }
       }
     }
@@ -297,6 +393,11 @@ body{
       opacity: 0;
       transform: translateX(400px);
       transition: opacity 1s, transform 1s;
+      @include media{
+        width: 90%;
+        height: 101px;
+        padding: 19px 21px;
+      }
       .content_right_left{
         width: 51px;
         margin-right: 30px;
@@ -307,9 +408,16 @@ body{
       }
       .content_right_right{
         padding-top: 5px;
+        @include media{
+          height: 60px;
+        }
         h1{
           color: $mainColor;
           margin: 0;
+          @include media{
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+          }
         }
       }
     }
@@ -325,12 +433,19 @@ body{
   width: 860px;
   margin: 0 auto;
   margin-bottom: 40px;
+  @include media{
+    width: 100%;
+  }
   h1{
     font-weight: bold;
     font-size: 2.25rem;
     text-align: center;
     margin-bottom: 100px;
     position: relative;
+    @include media{
+      font-size: 1.75rem;
+      margin-bottom: 60px;
+    }
     &::after{
       content: "";
       position: absolute;
@@ -339,15 +454,27 @@ body{
       background: black;
       top: 60px;
       left: 44%;
+      @include media{
+        width: 77px;
+        left: 40%;
+      }
     }
   }
   .student_voice_part1, .student_voice_part2, .student_voice_part3{
     display: flex;
     opacity: 0;
+    @include media{
+      flex-direction: column-reverse;
+      padding: 0 16px;
+      margin-bottom: 30px;
+    }
     .student_info{
       width: 120px;
       margin-right: 26px;
       margin-bottom: 80px;
+      @include media{
+        margin: 0 auto;
+      }
       img{
         background: lightgray;
         width: 100%;
@@ -366,6 +493,13 @@ body{
       padding: 20px;
       line-height: 35px;
       position: relative;
+      @include media{
+        width: 100%;
+        height: 161px;
+        margin-bottom: 24px;
+        line-height: 30px;
+        border-radius: 15px;
+      }
       &::before{
         content: "";
         position: absolute;
@@ -374,6 +508,13 @@ body{
         margin-left: -30px;
         border: 9px solid transparent;
         border-right: 24px solid #e9f1fb;
+        @include media{
+          top: 99%;
+          left: 55%;
+          margin-left: -30px;
+          border: 15px solid transparent;
+          border-top: 16px solid #e9f1fb;
+        }
       }
     }
   }
@@ -382,19 +523,40 @@ body{
   }
   .student_voice_part2{
     flex-direction: row-reverse;
+    @include media{
+      flex-direction: column-reverse;
+      padding: 0 16px;
+    }
     .student_info{
       margin-right: 0;
       margin-left: 26px;
+      @include media{
+        margin: 0 auto;
+      }
     }
-    .student_voice_content::before{
-      content: "";
-      position: absolute;
-      top: 60%;
-      right: 0;
-      left: auto;
-      margin-right: -30px;
-      border: 9px solid transparent;
-      border-left: 24px solid #e9f1fb;
+    .student_voice_content{
+      &::before{
+        content: "";
+        position: absolute;
+        top: 60%;
+        right: 0;
+        left: auto;
+        margin-right: -30px;
+        border: 9px solid transparent;
+        border-left: 24px solid #e9f1fb;
+        @include media{
+          top: 99%;
+          left: 55%;
+          width: 5%;
+          margin-left: -30px;
+          border: 15px solid transparent;
+          border-top: 16px solid #e9f1fb;
+        }
+      }
+      @include media{
+        height: 187px;
+        padding: 23px;
+      }
     }
   }
 }
@@ -418,16 +580,29 @@ body{
   padding: 60px 0 0 0;
   margin-bottom: 120px;
   overflow-x: auto;
+  @include media{
+    width: 100%;
+    height: 1443px;
+    padding: 32px 16px 0 16px;
+    margin-bottom: 55px;
+  }
   .wrapper{
     width: 860px;
     margin: 0 auto;
     margin-bottom: 40px;
+    @include media{
+      width: 100%;
+    }
     .school_title{
       font-weight: bold;
       font-size: 2.25rem;
       text-align: center;
       margin-bottom: 100px;
       position: relative;
+      @include media{
+        font-size: 1.75rem;
+        margin-bottom: 60px;
+      }
       &::after{
         content: "";
         position: absolute;
@@ -436,6 +611,10 @@ body{
         background: black;
         top: 60px;
         left: 44%;
+        @include media{
+          top: 50px;
+          left: 37%;
+        }
       }
     }
     .school_content{
@@ -450,19 +629,31 @@ body{
         margin-bottom: 32px;
         padding: 25px;
         text-align: center;
+        @include media{
+          padding: 15px;
+        }
         .school_introduction_title{
           margin-bottom: 15px;
           font-size: 1.75rem;
           font-weight: bold;
+          @include media{
+            font-size: 1.5rem;
+          }
         }
         .school_introduction_subtitle{
           font-size: 1.125rem;
           font-weight: bold;
           margin-bottom: 20px;
+          @include media{
+            font-size: 1rem;
+          }
         }
         .school_introduction_leson{
           width: 72%;
           margin: 0 auto;
+          @include media{
+            width: 87%;
+          }
           p{
             padding: 4px;
             color: black;
@@ -510,6 +701,9 @@ body{
             padding-bottom: 5px;
             letter-spacing: 3px;
             text-align: left;
+            @include media{
+              font-size: 12px;
+            }
             span{
               width: 63%;
               display: inline-block;
@@ -527,6 +721,10 @@ body{
             padding-bottom: 5px;
             padding: 0 0 5px 6px;
             position: relative;
+            @include media{
+              padding-left: 27px;
+              font-size: 1rem;
+            }
             &::before{
               content: "Q";
               position: absolute;
@@ -550,6 +748,10 @@ body{
             line-height: 29px;
             position: relative;
             padding-left: 36px;
+            @include media{
+              font-size: 12px;
+              line-height: 23px;
+            }
             &::before{
               content: "A";
               position: absolute;
@@ -574,6 +776,10 @@ body{
             width: inherit;
             display: inherit;
             margin: 17px 12px 0 auto;
+            @include media{
+              margin: 5px 5px 0 auto;
+              font-size: 13px;
+            }
           }
         }
       }
@@ -593,16 +799,25 @@ body{
         opacity: 0;
         transform: translateX(400px);
         transition: opacity 1s, transform 1s;
+        @include media{
+          height: 280px;
+        }
       }
       .school_content_part:nth-child(3){
         opacity: 0;
         transform: translateX(-400px);
         transition: opacity 1s, transform 1s;
+        @include media{
+          height: 310px;
+        }
       }
       .school_content_part:nth-child(4){
         opacity: 0;
         transform: translateX(400px);
         transition: opacity 1s, transform 1s;
+        @include media{
+          height: 247px;
+        }
       }
       .fadein-after2:nth-child(1){
         opacity: 1;
@@ -643,10 +858,18 @@ body{
 .entry{
   margin-bottom: 120px;
   text-align: center;
+  @include media{
+    padding: 0 15px;
+    margin-bottom: 70px;
+  }
   h1{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 6px;
+    @include media{
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
   }
   p{
     font-size: 0.889rem;
@@ -672,27 +895,39 @@ body{
     border-radius: 0.5rem;
     color: white;
     margin-top: 40px;
+    @include media{
+      width: 100%;
+      height: 60px;
+      font-size: 18px;
+    }
   }
   
   a.btn-border-shadow {
     padding: calc(1.5rem - 12px) 14rem 1.5rem;
-  
     background: #fff;
+    @include media{
+      padding: 15px 54px;
+    }
   }
   
   a.btn-border-shadow:before {
+    content: "";
     position: absolute;
     top: -8px;
     left: -8px;
     width: 100%;
     height: 100%;
-  
-    content: "";
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-  
     border: 3px solid #000;
     border-radius: 0.5rem;
+    @include media{
+      border-radius: 0;
+      width: 100%;
+      height: 60px;
+      top: -6px;
+      left: -6px;
+    }
   }
   
   a.btn-border-shadow:hover {
@@ -723,17 +958,32 @@ body{
     margin: 0 auto;
     display: flex;
     padding: 60px 0 10px 0;
+    @include media{
+      width: 100%;
+      flex-direction: column;
+      padding: 30px 20px 0 20px;
+    }
     .footer_left{
       display: flex;
       width: 50%;
+      @include media{
+        width: 100%;
+      }
       .footer_left_left, .footer_left_right{
         width: 50%;
+        @include media{
+          margin-bottom: 20px;
+          width: 50%;
+        }
         h1{
           font-weight: bold;
         }
         ul{
           padding-left: 5px;
           margin-top: 10px;
+          @include media{
+            font-size: 0.875rem;
+          }
           li{
             margin-bottom: 5px;
           }
@@ -743,6 +993,9 @@ body{
     .footer_right{
       display: flex;
       width: 50%;
+      @include media{
+        width: 100%;
+      }
       .footer_right_left, .footer_right_right{
         width: 50%;
         h1{
@@ -763,6 +1016,10 @@ body{
     margin-top: 60px;
     padding-bottom: 20px;
     font-size: 0.625rem;
+    @include media{
+      margin-top: 23px;
+      padding-bottom: 15px;
+    }
   }
 }
 #scroll_to_top_btn{
@@ -774,6 +1031,10 @@ body{
     bottom: 10px;
     font-size: 51px;
     color: #ff2a2a;
+    @include media{
+      font-size: 43px;
+      right: 19px;
+    }
     &:hover{
       opacity: 0.8;
     }
