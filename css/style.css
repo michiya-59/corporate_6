@@ -831,4 +831,76 @@ body {
 }
 .entry a.btn-border-shadow--color:before {
   border-radius: 0;
+}
+
+.footer {
+  background: #E8E8E8;
+}
+.footer .footer_wrapper {
+  width: 860px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 60px 0 10px 0;
+}
+.footer .footer_wrapper .footer_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+.footer .footer_wrapper .footer_left .footer_left_left, .footer .footer_wrapper .footer_left .footer_left_right {
+  width: 50%;
+}
+.footer .footer_wrapper .footer_left .footer_left_left h1, .footer .footer_wrapper .footer_left .footer_left_right h1 {
+  font-weight: bold;
+}
+.footer .footer_wrapper .footer_left .footer_left_left ul, .footer .footer_wrapper .footer_left .footer_left_right ul {
+  padding-left: 5px;
+  margin-top: 10px;
+}
+.footer .footer_wrapper .footer_left .footer_left_left ul li, .footer .footer_wrapper .footer_left .footer_left_right ul li {
+  margin-bottom: 5px;
+}
+.footer .footer_wrapper .footer_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+.footer .footer_wrapper .footer_right .footer_right_left, .footer .footer_wrapper .footer_right .footer_right_right {
+  width: 50%;
+}
+.footer .footer_wrapper .footer_right .footer_right_left h1, .footer .footer_wrapper .footer_right .footer_right_right h1 {
+  font-weight: bold;
+}
+.footer .footer_wrapper .footer_right .footer_right_left ul, .footer .footer_wrapper .footer_right .footer_right_right ul {
+  padding-left: 5px;
+  margin-top: 10px;
+}
+.footer .footer_wrapper .footer_right .footer_right_left ul li, .footer .footer_wrapper .footer_right .footer_right_right ul li {
+  margin-bottom: 5px;
+}
+.footer p {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+  font-size: 0.625rem;
+}
+
+#scroll_to_top_btn {
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+#scroll_to_top_btn .fa-solid {
+  position: fixed;
+  right: 7px;
+  bottom: 10px;
+  font-size: 51px;
+  color: #ff2a2a;
+}
+#scroll_to_top_btn .fa-solid:hover {
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */
