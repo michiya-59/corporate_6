@@ -1170,6 +1170,12 @@ body {
 .entry a.btn-border-shadow:hover {
   padding: calc(1.5rem - 6px) 14rem 1rem;
 }
+@media screen and (max-width: 900px) {
+  .entry a.btn-border-shadow:hover {
+    padding: 15px 54px;
+    pointer-events: none;
+  }
+}
 .entry a.btn-border-shadow:hover:before {
   top: 0;
   left: 0;

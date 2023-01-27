@@ -932,6 +932,10 @@ body{
   
   a.btn-border-shadow:hover {
     padding: calc(1.5rem - 6px) 14rem 1rem;
+    @include media{
+      padding: 15px 54px;
+      pointer-events: none;
+    }
   }
   
   a.btn-border-shadow:hover:before {
